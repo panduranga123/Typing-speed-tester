@@ -1,0 +1,36 @@
+<!-- Typing Speed Tester HTML Template -->
+<!-- This HTML file is designed to work with the TypingSpeedTester.js and TypingSpeedTester.css files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed Tester</title>
+  <link rel="stylesheet" href="TypingSpeedTester.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container fade-in">
+    <h1 class="slide-in">Typing Speed Tester</h1>
+    <p id="quote" class="fade-in"></p>
+    <textarea id="input" placeholder="Start typing here..." class="fade-in"></textarea>
+    <div class="stats slide-in">
+      <p>Time: <span id="timer">0</span>s</p>
+      <p>Speed: <span id="wpm">0</span> WPM</p>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+  <script src="TypingSpeedTester.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker Registered'))
+        .catch(err => console.error('Service Worker Failed:', err));
+    }
+  </script>
+</body>
+</html>
